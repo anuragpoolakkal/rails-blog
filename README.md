@@ -1,24 +1,18 @@
-# README
+# Blog using Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple blog application which allows to create posts, add comments.
 
-Things you may want to cover:
+Create new Ruby on Rails application:
+`rails new blog`
 
-* Ruby version
+Run Rails server
+`rails server`
 
-* System dependencies
+Create posts model
+`rails g scaffold post title:string, content:text`
 
-* Configuration
+Migrate database
+`rails db:migrate`
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Generate mailer helper
+`rails g mailer comments submitted`
