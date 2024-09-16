@@ -10,7 +10,10 @@ Run Rails server:
 `rails server`
 
 Create posts model:
-`rails g scaffold post title:string, content:text`
+`rails g scaffold post title:string, content:rich_text`
+
+Add actions_text for rich text:
+`rails action_text:install`
 
 Migrate database:
 `rails db:migrate`
@@ -24,9 +27,9 @@ Run tests:
 Change SQLite database to PostgreSQL:
 `rails db:system:change --to-postgresql`
 
-### Hosted on Render.com
+### Host on Render.com
 
-To host for free on Render.com, we have to setup Web Service, PostgreSQL and Redis manually.
+To host for free on Render.com, we have to setup Web Service, PostgreSQL and Redis manually. Follow [this video](https://www.youtube.com/watch?v=XCBWda8moVk).
 
 Create a web service by adding git repository of the project. Add RAILS_MASTER_KEY as environment variable and paste the key stored in /config/master.key as the value.
 
@@ -48,4 +51,9 @@ bundle install
 ```
 
 Make the file executable by running the command `chmod a+b bin/render-build.sh`.
+
+OR you can replace these two steps (creating the file and making it executable) by adding a gem.<br>
+Add the gem: `bundle add render_build_setup`<br>
+Then run `rails g render_build_setup` for it to create the file and make it executable.
+
 Commit and push your changes.
